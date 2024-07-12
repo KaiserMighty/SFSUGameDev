@@ -24,10 +24,10 @@ const handleNav = () => {
                     <a href='#join'>Join</a>
                 </li>
                 <li>
-                    <a href='#directions'>Directions</a>
+                    <a href='#faq'>FAQ</a>
                 </li>
                 <li>
-                    <a href='#games'>Games</a>
+                    <a href='#directions'>Directions</a>
                 </li>
             </ul>
             <div className='flex justify-between'>
@@ -54,13 +54,13 @@ const handleNav = () => {
                         <a href='/'>Home</a>
                     </li>
                     <li className='text-2xl py-8'>
-                        <a href='#gallery'>Gallery</a>
+                        <a href='#join'>Join</a>
                     </li>
                     <li className='text-2xl py-8'>
-                        <a href='#deals'>Deals</a>
+                        <a href='#faq'>FAQ</a>
                     </li>
                     <li className='text-2xl py-8'>
-                        <a href='#contact'>Contact</a>
+                        <a href='#directions'>Directions</a>
                     </li>
                 </ul>
             </div>
