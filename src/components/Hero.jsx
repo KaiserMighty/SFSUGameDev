@@ -21,6 +21,7 @@ const Hero = () => {
                             <a
                                 href="https://discord.com/"
                                 target="_blank"
+                                rel="noreferrer"
                                 className='px-4 py-2 bg-[var(--primary-dark)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-dark)] hover:border-[var(--dark-hover)]'
                             >
                                 <FaDiscord size={30} className='mr-3' />
@@ -31,6 +32,7 @@ const Hero = () => {
                             <a
                                 href="https://itch.io/"
                                 target="_blank"
+                                rel="noreferrer"
                                 className='px-4 py-2 bg-[var(--primary-light)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-light)] hover:border-[var(--light-hover)]'
                             >
                             <FaGamepad size={30} className='mr-3' />
