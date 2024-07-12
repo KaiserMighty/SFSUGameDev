@@ -12,7 +12,7 @@ const handleNav = () => {
     return (
         <div className='w-full min-h-[50px] flex justify-between items-center px-4 py-2 z-20 text-white bg-[var(--primary-dark)] sticky top-0'>
             <div className='flex items-center z-20'>
-                <a href ='/'>
+                <a href ='#root'>
                     <GiRetroController size={30} className='text-white mr-3' />
                 </a>
                 <h1 className='text-xl font-bold text-white'>GAME DEV @ SFSU</h1>
@@ -40,7 +40,7 @@ const handleNav = () => {
             >
                 <ul className='h-full w-full text-center pt-12'>
                     <li className='text-2xl py-8'>
-                        <a href='/'>Home</a>
+                        <a href='#root'>Home</a>
                     </li>
                     <li className='text-2xl py-8'>
                         <a href='#faq'>FAQ</a>
