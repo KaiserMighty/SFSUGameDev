@@ -1,4 +1,5 @@
 import React from 'react'
+import {FaDiscord, FaGamepad} from 'react-icons/fa'
 
 const Hero = () => {
     return (
@@ -9,12 +10,34 @@ const Hero = () => {
                 className='w-full h-full object-cover'
             />
             <div className='max-w-[1140px] m-auto'>
-                <div className='absolute top-[40%] w-full md:-[50%] max-w-[600px] h-full flex flex-col text-white p-4'>
-                    <h1 className='font-bold text-4xl'>Game Dev Club</h1>
-                    <h2 className='text-4xl py-4 italic'>At SF State</h2>
+                <div className='absolute top-[40%] w-full md:-[50%] max-w-[600px] h-100% flex flex-col text-white p-4 bg-black/30 rounded-lg'>
+                    <h1 className='font-bold text-4xl p-2'>Game Dev Club</h1>
+                    <h2 className='text-4xl py-4 italic p-2 ml-2'>At SF State</h2>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, atque voluptatibus mollitia quos quasi accusantium, blanditiis voluptates corrupti facere earum a, error vitae! Ratione obcaecati, blanditiis esse repellat inventore quo!
                     </p>
+                    <div className='flex justify-center'>
+                        <div className='py-4 px-2'>
+                            <a
+                                href="https://discord.com/"
+                                target="_blank"
+                                className='px-4 py-2 bg-[var(--primary-dark)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-dark)] hover:border-[var(--dark-hover)]'
+                            >
+                                <FaDiscord size={30} className='mr-3' />
+                                Discord
+                            </a>
+                        </div>
+                        <div className='py-4 px-2'>
+                            <a
+                                href="https://itch.io/"
+                                target="_blank"
+                                className='px-4 py-2 bg-[var(--primary-light)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-light)] hover:border-[var(--light-hover)]'
+                            >
+                            <FaGamepad size={30} className='mr-3' />
+                                Games
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
