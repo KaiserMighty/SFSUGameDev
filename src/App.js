@@ -3,6 +3,7 @@ import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Activities from './components/Activities'
 import FAQ from './components/FAQ'
+import Directions from './components/Directions'
 import Footer from './components/Footer'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Hero />
       <Activities />
       <FAQ />
+      <Directions />
       <Footer />
     </div>
   );
