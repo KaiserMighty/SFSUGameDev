@@ -1,7 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import {AiOutlineCompass, AiOutlineClockCircle} from 'react-icons/ai'
-import {GiRetroController} from 'react-icons/gi'
-import {BsChatSquareDots} from 'react-icons/bs'
 import {
     FaFacebookF,
     FaTwitter,
