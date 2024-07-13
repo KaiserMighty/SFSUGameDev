@@ -21,9 +21,6 @@ const handleNav = () => {
                 <li className='py-0'>
                     <a href='#faq'>FAQ</a>
                 </li>
-                <li className='py-0'>
-                    <a href='#directions'>Directions</a>
-                </li>
             </ul>
             {/* Hamburger Icon */}
             <div onClick={handleNav} className='sm:hidden z-20'>
@@ -44,9 +41,6 @@ const handleNav = () => {
                     </li>
                     <li className='text-2xl py-8'>
                         <a href='#faq'>FAQ</a>
-                    </li>
-                    <li className='text-2xl py-8'>
-                        <a href='#directions'>Directions</a>
                     </li>
                 </ul>
             </div>
