@@ -22,7 +22,7 @@ const Hero = () => {
                                 href="https://discord.com/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className='px-4 py-2 bg-[var(--primary-dark)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-dark)] hover:border-[var(--dark-hover)]'
+                                className='px-4 py-2 bg-[var(--primary-discord)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-discord)] hover:border-[var(--discord-hover)]'
                             >
                                 <FaDiscord size={30} className='mr-3' />
                                 Discord
@@ -33,7 +33,7 @@ const Hero = () => {
                                 href="https://itch.io/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className='px-4 py-2 bg-[var(--primary-light)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-light)] hover:border-[var(--light-hover)]'
+                                className='px-4 py-2 bg-[var(--primary-itch)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-itch)] hover:border-[var(--itch-hover)]'
                             >
                             <FaGamepad size={30} className='mr-3' />
                                 Games

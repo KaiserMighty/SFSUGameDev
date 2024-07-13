@@ -10,7 +10,7 @@ const handleNav = () => {
 }
 
     return (
-        <div className='w-full min-h-[50px] flex justify-between items-center px-4 py-2 z-20 text-white bg-[var(--primary-dark)] sticky top-0'>
+        <div className='w-full min-h-[50px] flex justify-between items-center px-4 py-2 z-20 text-white bg-[var(--nav-bar)] sticky top-0'>
             <div className='flex items-center z-20'>
                 <a href ='#root'>
                     <GiRetroController size={30} className='text-white mr-3' />
