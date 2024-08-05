@@ -10,11 +10,11 @@ const Hero = () => {
                 className='w-full h-full object-cover'
             />
             <div className='max-w-[1140px] m-auto'>
-                <div className='absolute top-[40%] w-full md:-[50%] max-w-[600px] h-100% flex flex-col text-white p-4 bg-black/30 rounded-lg'>
+                <div className='absolute top-[40%] w-full md:-[50%] max-w-[600px] h-100% flex flex-col text-white p-4'>
                     <h1 className='font-bold text-4xl p-2'>Game Dev Club</h1>
-                    <h2 className='text-4xl py-4 italic p-2 ml-2'>At SF State</h2>
+                    <h2 className='text-4xl py-4 italic p-2 ml-8'>At SF State</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, atque voluptatibus mollitia quos quasi accusantium, blanditiis voluptates corrupti facere earum a, error vitae! Ratione obcaecati, blanditiis esse repellat inventore quo!
+                        At the Game Development Club at SFSU, you can participate in student-led projects and exciting game jams. Join our Discord to stay informed and connected. All Gators are welcome to join us and be a part of our vibrant and creative community!
                     </p>
                     <div className='flex justify-center'>
                         <div className='py-4 px-2'>
