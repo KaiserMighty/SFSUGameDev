@@ -19,7 +19,7 @@ const Hero = () => {
                     <div className='flex justify-center'>
                         <div className='py-4 px-2'>
                             <a
-                                href="https://discord.com/"
+                                href="https://discord.gg/Zn7BFAvqrx"
                                 target="_blank"
                                 rel="noreferrer"
                                 className='px-4 py-2 bg-[var(--primary-discord)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-discord)] hover:border-[var(--discord-hover)]'
@@ -30,7 +30,7 @@ const Hero = () => {
                         </div>
                         <div className='py-4 px-2'>
                             <a
-                                href="https://itch.io/"
+                                href="https://game-dev-club-sf-state.itch.io/"
                                 target="_blank"
                                 rel="noreferrer"
                                 className='px-4 py-2 bg-[var(--primary-itch)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-itch)] hover:border-[var(--itch-hover)]'
