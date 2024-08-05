@@ -1,19 +1,18 @@
 import React from 'react'
-import NavBar from './components/NavBar'
-import Hero from './components/Hero'
-import Activities from './components/Activities'
-import FAQ from './components/FAQ'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Archive from './pages/Archive';
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <Hero />
-      <Activities />
-      <FAQ />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/archive' element={<Archive />} />
+      </Routes>
+    </Router>
   );
 }
 
