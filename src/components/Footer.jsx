@@ -8,19 +8,19 @@ const Footer = () => {
     return (
         <div>
             <div className='flex flex-col sm:flex-row items-center justify-center m-auto pt-4'>
-                <a href="https://game-dev-club-sf-state.itch.io/" className='text-white flex items-center p-2 gap-1'>
+                <a href="https://game-dev-club-sf-state.itch.io/" className='text-white flex items-center gap-1 p-1 md:p-2'>
                     <FaItchIo />
                     itch.io
                 </a> 
-                <a href="https://www.instagram.com/gamedev.sfsu/" className='text-white flex items-center p-2 gap-1'>
+                <a href="https://www.instagram.com/gamedev.sfsu/" className='text-white flex items-center gap-1 p-1 md:p-2'>
                     <FaInstagram />
                     Instagram
                 </a>
-                <a href="https://discord.gg/Zn7BFAvqrx" className='text-white flex items-center p-2 gap-1'>
+                <a href="https://discord.gg/Zn7BFAvqrx" className='text-white flex items-center gap-1 p-1 md:p-2'>
                     <FaDiscord />
                     Discord
                 </a>
-                <a href="mailto:sfsugamedev@gmail.com" className='text-white flex items-center p-2 gap-1'>
+                <a href="mailto:sfsugamedev@gmail.com" className='text-white flex items-center gap-1 p-1 md:p-2'>
                     <MdEmail />
                     sfsugamedev@gmail.com
                 </a>
