@@ -11,10 +11,9 @@ const Hero = () => {
             />
             <div className='max-w-[1140px] m-auto'>
                 <div className='absolute top-[40%] w-full md:-[50%] max-w-[600px] h-100% flex flex-col text-white p-4'>
-                    <h1 className='font-bold text-4xl p-2'>Game Dev Club</h1>
-                    <h2 className='text-4xl py-4 italic p-2 ml-8'>At SF State</h2>
+                    <h1 className='font-bold text-4xl py-2'>Game Dev Club At SF State</h1>
                     <p>
-                        At the Game Development Club at SFSU, you can participate in student-led projects and exciting game jams. Join our Discord to stay informed and connected. All Gators are welcome to join us and be a part of our vibrant and creative community!
+                        At the Game Development Club at SFSU, you can participate in many student-led projects and exciting game jams. Join our Discord to stay informed and connected. Gators from all majors are welcome to join us and be a part of our vibrant and creative community!
                     </p>
                     <div className='flex justify-center'>
                         <div className='py-4 px-2'>
@@ -36,7 +35,7 @@ const Hero = () => {
                                 className='px-4 py-2 bg-[var(--primary-itch)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-itch)] hover:border-[var(--itch-hover)]'
                             >
                             <FaItchIo size={30} className='mr-3' />
-                                Games
+                                Itch.io
                             </a>
                         </div>
                     </div>
