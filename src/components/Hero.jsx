@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaDiscord, FaGamepad} from 'react-icons/fa'
+import {FaDiscord, FaItchIo} from 'react-icons/fa'
 
 const Hero = () => {
     return (
@@ -35,7 +35,7 @@ const Hero = () => {
                                 rel="noreferrer"
                                 className='px-4 py-2 bg-[var(--primary-itch)] flex items-center font-bold rounded border-0 border-b-4 border-[var(--secondary-itch)] hover:border-[var(--itch-hover)]'
                             >
-                            <FaGamepad size={30} className='mr-3' />
+                            <FaItchIo size={30} className='mr-3' />
                                 Games
                             </a>
                         </div>
