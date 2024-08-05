@@ -5,7 +5,7 @@ const Accordian = ({question, answer}) => {
     return (
         <div>
             <button onClick={() => setAccordionOpen(!accordionOpen)} className='flex justify-between w-full'>
-                <span>{question}</span>
+                <span className='text-left'>{question}</span>
                 <svg
                 className="fill-white shrink-0 ml-8"
                 width="16"
