@@ -1,17 +1,13 @@
 import React from 'react';
 import NavBar from '../components/NavBar'
-import Hero from '../components/Hero'
-import Activities from '../components/Activities'
-import FAQ from '../components/FAQ'
 import Footer from '../components/Footer'
+import CardDeck from '../components/CardDeck'
 
 function Projects() {
   return (
     <div>
         <NavBar />
-        <Hero />
-        <Activities />
-        <FAQ />
+        <CardDeck />
         <Footer />
     </div>
   );
