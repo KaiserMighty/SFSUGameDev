@@ -1,16 +1,16 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ({image, title, lead, link}) => {
     return (
-        <a className='shadow-xl bg-white cursor-pointer'>
-            <img 
-                src="https://images.unsplash.com/photo-1720597000771-6c936f9ca0e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                alt="" 
-                className='aspect-square' 
+        <a className='shadow-2xl bg-white cursor-pointer rounded-lg scale-100 hover:scale-105 transition-transform duration-150 ease-in-out' href={link}>
+            <img
+                src={image}
+                alt="image"
+                className='w-full h-48 object-cover rounded-t-lg'
             />
             <div className='p-2'>
-                <h4 className='text-center'>Title</h4>
-                <p className='text-center'>Test</p>
+                <h4 className='font-bold text-lg'>{title}</h4>
+                <p className='text-sm'>By {lead}</p>
             </div>
         </a>
     )
