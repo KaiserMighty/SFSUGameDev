@@ -1,5 +1,5 @@
 # Static React Website for the Game Development Club at SFSU
-This project was created in the Fall 2024 semester, my final semester at SFSU. Recognizing that I will be departing SFSU, I wanted to leave enough documentation such that someone else can fork this repo and continue maintaining it for the club. At the time of writing, the website is built on React, the domain is from PorkBun, and the remote instance is from Digital Ocean. The documentation assumes these are still the same, you may have to look up additional material if this changes. In the interest of time, I have not explained every trivial detail of the website, some level of web development experience is expected.
+This project was created in the Fall 2024 semester, my final semester at SFSU. Recognizing that I will be departing SFSU, I wanted to leave enough documentation such that anyone can fork this repo and continue maintaining it for the club. At the time of writing, the website is built on React, the domain is from PorkBun, and the remote instance is from Digital Ocean. The documentation assumes these are still the same, you may have to look up additional material if this changes. In the interest of time, I have not explained every trivial detail of the website, some level of web development experience is expected.
 
 ## React Development
 
@@ -7,16 +7,16 @@ This project was created in the Fall 2024 semester, my final semester at SFSU. R
 Replacing the images on the front page is fairly straightforward.
 
 **For the header image:**  
-Head into the src folder to find all the sources files.  
-Open the components directory to find all the reusable react components.
-Open `Hero.jsx` and locate the `<img>` tag.  
-Replace the link inside the `src` field of the tag to a different image.
+1. Head into the src folder to find all the sources files.  
+2. Open the components directory to find all the reusable react components.
+3. Open `Hero.jsx` and locate the `<img>` tag.  
+4. Replace the link inside the `src` field of the tag to a different image.
 
 **For the smaller tile images:**  
-Head into the src folder to find all the sources files.  
-Open the components directory to find all the reusable react components.
-Open `Activities.jsx` and locate the `<img>` tag.  
-Replace the link inside the `src` field of the tag to a different image.
+1. Head into the src folder to find all the sources files.  
+2. Open the components directory to find all the reusable react components.
+3. Open `Activities.jsx` and locate the `<img>` tag.  
+4. Replace the link inside the `src` field of the tag to a different image.
 
 ### Extending the FAQ
 To extend the FAQ section of the home page, open up `FAQ.jsx` inside the `components` folder of the `src` directory.  
@@ -74,7 +74,8 @@ To use this tool, ensure you have Python, Selenium, and Chromedriver installed:
 You can install selenium with Pip by running the code below on a terminal.
 ```pip install selenium```
 
-There is a version of `chromedriver.exe` in the `tools` folder, but this will likely be out of date by current time.  
+- There is a version of `chromedriver.exe` in the `tools` folder, but this will likely be out of date by current time.  
+
 To update the version, go to [https://googlechromelabs.github.io/chrome-for-testing/](https://googlechromelabs.github.io/chrome-for-testing/)  
 Follow the URL for the chromedriver *Binary* made for your *Platform*. You also need Google Chrome installed for this, which you can grab here as well.  
 Replace `chromedriver.exe` in the `tools` directory with the one you downloaded.
@@ -87,17 +88,17 @@ After completing it's run, the script will create a file called `scraper_output.
 
 In `Archive.jsx`, paste the contents of the output under `<CategoryContainer>` such that it creates a new category just like the existing examples. You may have to make minor edits to the indentation and such, but the script has done all the heavy lifting for you.  
 
-For games that aren't actually on itch.io (like Roblox), make sure you manually edit the link from the output and change it to the roblox game page.  
+- For games that aren't actually on itch.io (like Roblox), make sure you manually edit the link from the output and change it to the roblox game page.  
 
 ### Thumbnail Retrieval from itch.io
 Manual extension is easy if you have all the data. This is straightforward for fields like `title`, `authors`, and `game_url`. But getting the `image_url` for the thumbnail can be a little less obvious.
 
 **If you are on the submissions page of a Game Jam:**  
-With your mouse over the thumbnail for a game, right click and select *Inspect Element*.  
-The popup should already be highlighting the item you were looking at (likely starts with `<a href=`).  
-Click the *Right Arrow* on the `<a>` tag to show subordinate tags until you locate an `<img>` tag.  
-Copy the contents of `src="there_should_be_a_link_here"`, the link inside the quotes is what you are looking for.  
-Paste it where needed, this link points to the itch.io game thumbnail.
+1. With your mouse over the thumbnail for a game, right click and select *Inspect Element*.  
+2. The popup should already be highlighting the item you were looking at (likely starts with `<a href=`).  
+3. Click the *Right Arrow* on the `<a>` tag to show subordinate tags until you locate an `<img>` tag.  
+4. Copy the contents of `src="there_should_be_a_link_here"`, the link inside the quotes is what you are looking for.  
+5. Paste it where needed, this link points to the itch.io game thumbnail.
 
 ## Remote Hosting
 
@@ -118,7 +119,7 @@ This will create an optimized production build that needs to be placed on the se
 **You can do this with the `pushUpdate` Python script by running `python pushUpdate.py` from a terminal in the repo's root directory and entering the passphrase when it asks.**  
 
 If the script does not work for whatever reason, you can do it manually by following the steps below:  
-Runn the command below (make sure to replace `droplet_ip` with the correct value) to upload the build directory.
+Run the command below (make sure to replace `droplet_ip` with the correct value) to upload the build directory.
 ```
 scp -i sfsugamedev_key -r build/* root@droplet_ip:/var/www/react-app
 ```
@@ -126,10 +127,10 @@ This command should be ran from the repo's root directory, which contains the `b
 This command will also SSH into the droplet, this means the key needs to be in the same directory you are running the command from.
 
 **When I moved my SSH key into the repo directory and tried SSHing, it complained that the permissions were too open.**  
-I fixed this by right clicking the key, going to properties, then security, and clicking advanced.  
-I clicked *Disable Inheritence* and then clicked *Change* next to owner at the top to make myself the owner.  
-Then, I deleted all existing permissions. I added myself, gave myself *Full Control*, and saved the permissions.
-(You may not need to add yourself if you are struggling to do so, as long as you are the owner and no one else has permissions).  
+1. I fixed this by right clicking the key, going to properties, then security, and clicking advanced.  
+2. I clicked *Disable Inheritence* and then clicked *Change* next to owner at the top to make myself the owner.  
+3. Then, I deleted all existing permissions. I added myself, gave myself *Full Control*, and saved the permissions.
+- (You may not need to add yourself if you are struggling to do so, as long as you are the owner and no one else has permissions).  
 
 Once uploaded, ssh back into the node with `ssh -i ssh_key root@droplet_ip` and run `sudo systemctl reload nginx` to reload the page contents.  
 
@@ -180,35 +181,35 @@ Finally, you can test the server by running `sudo nginx -t`. If the test was suc
 If there is no existing, already configured, Digital Ocean droplet, here are the steps to configure a blank droplet.
 
 **Adding an SSH Key:**  
-From the Digital Ocean dashboard, go to *Settings*.  
-Click on *Security* at the top.  
-Click *Add SSH Key*.  
-There are instructions on the right side of the popup to create a new key if needed.  
-Paste in your SSH key under *Public Key* and give it a name in *Key Name*.  
-Hit *Add SSH Key*.  
+1. From the Digital Ocean dashboard, go to *Settings*.  
+2. Click on *Security* at the top.  
+3. Click *Add SSH Key*.  
+4. There are instructions on the right side of the popup to create a new key if needed.  
+5. Paste in your SSH key under *Public Key* and give it a name in *Key Name*.  
+6. Hit *Add SSH Key*.  
 
 **Opening up the Firewall:**  
-From the Digital Ocean dashboard, go to *Networking* and click on *Firewalls*.  
-Choose an existing Firewall that you are using or hit *Create Firewall*.  
-Leave outbound rules as is.  
-Ensure *SSH* with the TCP port 22 already exists, create a new rule if it doesn't.  
-Click *New rule* and choose HTTP, ensure the *Protocol* is TCP and the *Port Range* is 80.  
-Click *New rule* and choose HTTPS, ensure the *Protocol* is TCP and the *Port Range* is 443.  
-Make sure this Firewall is applied to the correct droplet.  
+1. From the Digital Ocean dashboard, go to *Networking* and click on *Firewalls*.  
+2. Choose an existing Firewall that you are using or hit *Create Firewall*.  
+3. Leave outbound rules as is.  
+4. Ensure *SSH* with the TCP port 22 already exists, create a new rule if it doesn't.  
+5. Click *New rule* and choose HTTP, ensure the *Protocol* is TCP and the *Port Range* is 80.  
+6. Click *New rule* and choose HTTPS, ensure the *Protocol* is TCP and the *Port Range* is 443.  
+7. Make sure this Firewall is applied to the correct droplet.  
 
 **To use a custom domain for the website:**  
-From the Digital Ocean dashboard, go to *Networking* and click on *Domains*.  
-Enter your domain, select the correct droplet, and hit Add Domain.  
-Click the *More* dropdown on the newly created domain and hig *Manage domain*.  
-Choose A under *Create a new record*.  
-Enter `@` into *Hostname*, select the correct droplet from *Will Direct To*, leave *TTL (Seconds)* at the default value, and hit *Create Record*  
-Choose A under *Create a new record*.  
-Enter `www` into *Hostname*, select the correct droplet from *Will Direct To*, leave *TTL (Seconds)* at the default value, and hit *Create Record*.  
+1. From the Digital Ocean dashboard, go to *Networking* and click on *Domains*.  
+2. Enter your domain, select the correct droplet, and hit Add Domain.  
+3. Click the *More* dropdown on the newly created domain and hig *Manage domain*.  
+4. Choose A under *Create a new record*.  
+5. Enter `@` into *Hostname*, select the correct droplet from *Will Direct To*, leave *TTL (Seconds)* at the default value, and hit *Create Record*  
+6. Choose A under *Create a new record*.  
+7. Enter `www` into *Hostname*, select the correct droplet from *Will Direct To*, leave *TTL (Seconds)* at the default value, and hit *Create Record*.  
 
 **Make sure your domain provider is using the digital ocean nameservers:**  
-If you are using PorkBun, go to the dashboard, and click details on the domain.  
-Click the *Edit Icon* next to *Nameservers*.  
-Clear out the text box and paste the following in:
+1. If you are using PorkBun, go to the dashboard, and click details on the domain.  
+2. Click the *Edit Icon* next to *Nameservers*.  
+3. Clear out the text box and paste the following in:
 ```
 ns1.digitalocean.com
 ns2.digitalocean.com
