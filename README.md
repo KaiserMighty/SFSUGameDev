@@ -105,7 +105,7 @@ Paste it where needed, this link points to the itch.io game thumbnail.
 To access the droplet which will be hosting the website, we need to SSH into it.  
 For security purposes, the key is not present in the GitHub repo, but someone should have it.
 
-You can run the following command from a terminal, where the directory is the same as where the key is located, in order to access the droplet:
+Run the following command from a terminal where the working directory is the same as where the key is located (I used the Downloads folder):
 ```
 ssh -i ssh_key root@droplet_ip
 ```
@@ -115,14 +115,21 @@ Make sure to change `ssh_key` to the filename of the key if you are in the same 
 Once you are ready to host the project online, run `npm run build`  
 This will create an optimized production build that needs to be placed on the server.
 
-This can be achived by running the command below (make sure to replace `droplet_ip` with the correct value):
+**You can do this with the `pushUpdate` Python script by running `python pushUpdate.py` from a terminal in the repo's root directory and entering the passphrase when it asks.**  
+
+If the script does not work for whatever reason, you can do it manually by following the steps below:  
+Runn the command below (make sure to replace `droplet_ip` with the correct value) to upload the build directory.
 ```
-scp -r build/ root@droplet_ip:/var/www/react-app
+scp -i sfsugamedev_key -r build/* root@droplet_ip:/var/www/react-app
 ```
-This command needs to be ran from the directory containing the build folder (Alternatively, you can edit `build/` to point towards the react build directory).  
+This command should be ran from the repo's root directory, which contains the `build` folder.  
 This command will also SSH into the droplet, this means the key needs to be in the same directory you are running the command from.
 
-I had my ssh key in my downloads folder, so I simply copied the build folder from the repo directory and pasted it into my downloads folder before running the command above.
+**When I moved my SSH key into the repo directory and tried SSHing, it complained that the permissions were too open.**  
+I fixed this by right clicking the key, going to properties, then security, and clicking advanced.  
+I clicked *Disable Inheritence* and then clicked *Change* next to owner at the top to make myself the owner.  
+Then, I deleted all existing permissions. I added myself, gave myself *Full Control*, and saved the permissions.
+(You may not need to add yourself if you are struggling to do so, as long as you are the owner and no one else has permissions).  
 
 Once uploaded, ssh back into the node with `ssh -i ssh_key root@droplet_ip` and run `sudo systemctl reload nginx` to reload the page contents.  
 
@@ -136,28 +143,23 @@ sudo apt install nodejs npm
 ```
 Then, you can follow the steps from "updating" to copy over an optimized production build into the droplet.
 
-Next, set up a configuration file for this server by running `sudo nano /etc/nginx/sites-available/react-app`  
-This will open a text editor, paste the contents below making sure to change `domain`
+**Note: "domain" is a placeholder for your custom domain, make sure you replace it in all terminal commands going forward**  
+Next, set up a configuration file for this server by running `sudo nano /etc/nginx/sites-available/domain.com`  
+This will open a text editor, paste the contents below
 ```
 server {
     listen 80;
     server_name domain.com www.domain.com;
 
     root /var/www/react-app;
-    index index.html index.htm;
+    index index.html;
 
     location / {
         try_files $uri /index.html;
     }
-
-    error_page 404 /index.html;
-
-    location ~ /\.ht {
-        deny all;
-    }
 }
 ```
-Enable this new configuration by running `sudo ln -s /etc/nginx/sites-available/react-app /etc/nginx/sites-enabled/`  
+Enable this new configuration by running `sudo ln -s /etc/nginx/sites-available/domain.com /etc/nginx/sites-enabled/`  
 You can also optionally delete the default config with `sudo rm /etc/nginx/sites-enabled/default`
 
 To ensure the system has the correct permissions for these, I had to run the two lines below:
@@ -165,6 +167,13 @@ To ensure the system has the correct permissions for these, I had to run the two
 sudo chown -R www-data:www-data /var/www/react-app
 sudo chmod -R 755 /var/www/react-app
 ```
+
+To enable HTTPS, run the following commands:
+```
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d domain.com -d www.domain.com
+```
+
 Finally, you can test the server by running `sudo nginx -t`. If the test was successful, run `sudo systemctl reload nginx` and the server should be working.
 
 ### Digital Ocean Setup
