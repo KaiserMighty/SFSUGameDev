@@ -43,13 +43,13 @@ const NavBar = () => {
             >
                 <ul className='h-full w-full text-center pt-12'>
                     <li className='text-2xl py-8'>
-                        <Link to='/'>Home</Link>
+                        <Link to='/' className={`${isActive('/') ? 'font-bold' : ''}`}>Home</Link>
                     </li>
                     <li className='text-2xl py-8'>
-                        <Link to='/projects'>Projects</Link>
+                        <Link to='/projects' className={`${isActive('/projects') ? 'font-bold' : ''}`}>Projects</Link>
                     </li>
                     <li className='text-2xl py-8'>
-                        <Link to='/archive'>Archive</Link>
+                        <Link to='/archive' className={`${isActive('/archive') ? 'font-bold' : ''}`}>Archive</Link>
                     </li>
                 </ul>
             </div>
